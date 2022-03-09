@@ -1,11 +1,11 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import { GatsbyImage } from "gatsby-plugin-image";
+import * as React from 'react'
+import PropTypes from 'prop-types'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
-const PreviewCompatibleImage = ({ imageInfo }) => {
-  const imageStyle = { borderRadius: "5px" };
+function PreviewCompatibleImage({ imageInfo }) {
+  const imageStyle = { borderRadius: '5px' }
 
-  const { alt = "", childImageSharp, image } = imageInfo;
+  const { alt = '', childImageSharp, image } = imageInfo
 
   if (!!image && !!image.childImageSharp) {
     return (
@@ -14,22 +14,23 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
         style={imageStyle}
         alt={alt}
       />
-    );
-  } else if (!!childImageSharp) {
+    )
+  }
+  if (childImageSharp) {
     return (
       <GatsbyImage
         image={childImageSharp.gatsbyImageData}
         style={imageStyle}
         alt={alt}
       />
-    );
-    // for Netlify CMS 
-  } else if (image) {
-    return <img style={{imageStyle}} src={image} alt={alt} />;
-  } else {
-    return null
+    )
+    // for Netlify CMS
   }
-};
+  if (image) {
+    return <img style={{ imageStyle }} src={image} alt={alt} />
+  }
+  return null
+}
 
 PreviewCompatibleImage.propTypes = {
   imageInfo: PropTypes.shape({
@@ -38,6 +39,6 @@ PreviewCompatibleImage.propTypes = {
     image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
     style: PropTypes.object,
   }).isRequired,
-};
+}
 
-export default PreviewCompatibleImage;
+export default PreviewCompatibleImage
