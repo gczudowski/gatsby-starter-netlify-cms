@@ -5,29 +5,6 @@ module.exports = {
       'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
   },
   plugins: [
-    {
-      resolve: 'gatsby-plugin-prettier-eslint',
-      options: {
-        prettier: {
-          patterns: [
-            // the pattern "**/*.{js,jsx,ts,tsx}" is not used because we will rely on `eslint --fix`
-            '**/*.{css,scss,less}',
-            '**/*.{json,json5}',
-            '**/*.{graphql}',
-            '**/*.{md,mdx}',
-            '**/*.{html}',
-            '**/*.{yaml,yml}',
-          ],
-        },
-        eslint: {
-          patterns: '**/*.{js,jsx,ts,tsx}',
-          customOptions: {
-            fix: true,
-            cache: true,
-          },
-        },
-      },
-    },
     `gatsby-plugin-styled-components`,
     'gatsby-plugin-react-helmet',
     {

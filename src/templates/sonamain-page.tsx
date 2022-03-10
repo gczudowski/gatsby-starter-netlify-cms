@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
+import Wave from 'react-wavify';
 
 function SonamainPage({ data, test }) {
   const {
@@ -19,7 +20,12 @@ function SonamainPage({ data, test }) {
           <div>{subtitle}</div>
           <Link to="/contact">{buttonLabel}</Link>
         </WelcomeSectionContent>
+
+
       </WelcomeSectionContainer>
+      <svg view-box="0 0 1600 900">
+          <path fill="#40e0d0" opacity="1" d="M0,173C267,116,534,117,801,325,C1068,533,1335,208,1602,356,C1600, 0,1600, 0,1600, 0C1600, 0,1600, 0,1600, 0C1600, 0,1600, 0,1600, 0C1600, 0,1600, 0,1600, 0L1600,0C1333,0,1066,0,799,0,C532,0,265,0,-2,0,C0, 0,0, 0,0, 0C0, 0,0, 0,0, 0C0, 0,0, 0,0, 0C0, 0,0, 0,0, 0L1401,0L0,0Z" />
+        </svg>
     </Layout>
   );
 }
